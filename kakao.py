@@ -53,7 +53,7 @@ def payment():
 
     #check request args
     if card_no == None or type(card_no) != int or len(str(card_no)) < 10 or len(str(card_no)) > 16:
-        res = { "error" : "카드 번호가 잘못되었습니다." }
+        res = { "error" : "카드번호가 잘못되었습니다." }
         #response
         return json.dumps(res, ensure_ascii=False)
     
@@ -134,7 +134,7 @@ def cancel():
 
     #check request args
     if mgnt_no == None or mgnt_no == "":
-        res = { "error" : "관리 번호가 잘못되었습니다." }
+        res = { "error" : "관리번호가 잘못되었습니다." }
         #response
         return json.dumps(res, ensure_ascii=False)   
     
@@ -176,7 +176,7 @@ def cancel():
 
     #error - not found
     if len(rows) == 0:
-        res = { "error" : "검색결과가 없습니다." }
+        res = { "error" : "결제정보 조회 결과가 없습니다." }
         #response
         return json.dumps(res, ensure_ascii=False)
 
