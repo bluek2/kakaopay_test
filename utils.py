@@ -22,7 +22,7 @@ def db_setup():
     EXP_YM 	        integer(4), 		    --유효기간
     CARD_CVC 		integer(3), 		    --cvc
     CARD_INFO       text(300),              --암호화된 카드정보
-    PAY_PRD	        integer(2) default '0', --할부개월수 installmentMonth
+    PAY_PRD	        integer(2) default '00',--할부개월수 installmentMonth
     PAY_AMT 	    integer(10),		    --결제금액
     VAT_AMT		    integer(10),		    --부가가치세
     CNCL_CD		    text(1), 		        --취소구분코드(0:결제, 1:결제취소)
