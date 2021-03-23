@@ -290,7 +290,7 @@ def select():
         masked_card_no = card_no[0:6] + mask + card_no[-3:]
 
         res['card'] = { 'card_no' : masked_card_no, 'exp_ym' : exp_ym, 'card_cvc' : card_cvc}
-        res['cncl_cd'] = row[9]
+        res['cncl_cd'] = row[8]
         res['payment'] = { 'pay_amt' : row[6], 'vat_amt' : row[7]}
         break
 
