@@ -77,7 +77,7 @@ def decrypt(cipher_str):
 
     return (card_no, exp_ym, cvc)
 
-#
+#카드사 전송 데이터 생성 
 def make_card_request(func, mgnt_no, card_no, pay_prd, exp_ym, card_cvc, pay_amt, vat_amt, orgnl_mgnt_no, card_info, reserv):
     #common-header
     req_head  = "{:10}".format(func)
@@ -94,6 +94,7 @@ def make_card_request(func, mgnt_no, card_no, pay_prd, exp_ym, card_cvc, pay_amt
     req_body += "{:300}".format(card_info)
     req_body += "{:47}".format(reserv)
 
+    #전체 길이
     send_data = "{:4}".format(len(req_head + req_body))
 
     send_data += req_head + req_body

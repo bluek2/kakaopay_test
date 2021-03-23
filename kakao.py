@@ -9,8 +9,6 @@ import utils
 #Flask 어플리케이션 생성
 app = Flask(__name__)
 
-
-
 #
 # db 초기화
 #
@@ -286,9 +284,11 @@ def select():
         #card_info
         (card_no, exp_ym, card_cvc) = utils.decrypt(row[4])
 
+        #카드번호 마스킹
         mask = "*" * (len(card_no) - 9)
         masked_card_no = card_no[0:6] + mask + card_no[-3:]
 
+        #결제정보 데이터
         res['card'] = { 'card_no' : masked_card_no, 'exp_ym' : exp_ym, 'card_cvc' : card_cvc}
         res['cncl_cd'] = row[8]
         res['payment'] = { 'pay_amt' : row[6], 'vat_amt' : row[7]}
